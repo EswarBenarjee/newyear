@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy New Year</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Big+Shoulders+Text&family=Satisfy&family=Spectral&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: rgb(25, 40, 27);
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .snowflake {
+        position: absolute;
+        animation: fall 5s linear infinite;
+        animation-delay: 0s;
+        z-index: 2;
+        width: 20px;
+      }
+
+      .christmasBalls {
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+      }
+
+      body .christmasBalls:nth-child(1) {
+        left: 10vw;
+        width: 12vw;
+        filter: blur(10px);
+        animation: move 2s linear infinite alternate-reverse;
+        animation-delay: 50ms;
+      }
+
+      body .christmasBalls:nth-child(2) {
+        left: 40vw;
+        width: 20vw;
+        filter: blur(10px);
+        animation: move 2s linear infinite alternate-reverse;
+      }
+
+      body .christmasBalls:nth-child(3) {
+        left: 70vw;
+        width: 10vw;
+        filter: blur(10px);
+        animation: move 2s linear infinite alternate-reverse;
+        animation-delay: 2ms;
+      }
+
+      .outerDiv {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .glassBorder {
+        color: #fff;
+        height: 80vh;
+        width: 80vw;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 15px 18px;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        z-index: 1;
+      }
+
+      .glass {
+        border-radius: 8px;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        position: relative;
+        padding-top: 10vh;
+      }
+
+      .glass h2 {
+        margin-top: 40px;
+        font-family: "Big Shoulders Text", cursive;
+      }
+
+      .glass h1 {
+        font-family: "Satisfy", cursive;
+        font-size: 80px;
+      }
+
+      .glass h3 {
+        font-family: "Spectral", serif;
+        margin-top: 20px;
+      }
+      .glass h3 span {
+        color: gold;
+        font-weight: bold;
+      }
+
+      .snow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-100px);
+        }
+        100% {
+          transform: translateY(100vh);
+        }
+      }
+
+      @keyframes move {
+        0% {
+          transform: translateX(-10px);
+          transform: rotateY(0deg);
+          filter: blur(10px);
+        }
+        100% {
+          transform: translateX(10px);
+          transform: rotateY(15deg);
+          filter: blur(0px);
+        }
+      }
+
+      #audio {
+        font-size: 20px;
+        color: #fff;
+        font-weight: lighter;
+        position: absolute;
+        top: 90%;
+        left: 0;
+        right: 0;
+        font-family: "Audiowide", cursive;
+      }
+      i {
+        padding: 2px 5px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      @media only screen and (max-width: 768px) {
+        body .christmasBalls:nth-child(1) {
+          left: 0;
+          width: 40vw;
+        }
+        body .christmasBalls:nth-child(2) {
+          left: 10vw;
+          width: 80vw;
+        }
+        body .christmasBalls:nth-child(3) {
+          width: 20vw;
+        }
+        .glassBorder {
+          height: 80vh;
+          position: relative;
+          bottom: 6vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="img/ball1.png" class="christmasBalls" alt="" />
+    <img src="img/ball2.png" class="christmasBalls" alt="" />
+    <img src="img/ball3.png" class="christmasBalls" alt="" />
+    <div class="snow">
+      <div class="outerDiv">
+        <div class="glassBorder">
+          <div class="glass text-center">
+            <h2 style="margin-left: 100px">Happy</h2>
+            <h1>
+              New &nbsp;&nbsp;&nbsp;<br />
+              &nbsp;&nbsp;&nbsp;Year
+            </h1>
+            <h3>From <span>Eswar Benarjee</span></h3>
+
+            <div class="text-center" id="audio">
+                <i class='bi bi-pause-fill'></i> Pause Audio
+              <i class="bi bi-play-fill"></i> Play Audio
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio loop autoplay id="audioPlayer">
+        <source src="./audio/newYear.mp3" type="audio/mp3"/>
+    </audio>
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    let snowDiv = document.querySelector(".snow");
+
+    // Snowflake generator
+    let snowFlakes = Array(200);
+    let i = 0;
+
+    let speed = 500;
+    setInterval(snowGenerator, speed);
+    function snowGenerator() {
+      snowFlakes[i] = document.createElement("img");
+      snowFlakes[i].src = "./img/snowflake.png";
+      snowFlakes[i].classList.add("snowflake");
+
+      // Random position generator
+      let x = Math.floor(Math.random() * 100);
+      snowFlakes[i].style.left = x + "vw";
+      snowFlakes[i].style.top = "0vh";
+
+      // Random size generator
+      let width = Math.floor(Math.random() * 30);
+      snowFlakes[i].style.width = width + "px";
+
+      let zIndex = Math.floor(Math.random() * 2);
+      snowFlakes[i].style.zIndex = zIndex;
+
+      // Random blur generator
+      let blur = Math.floor(Math.random() * 5);
+      snowFlakes[i].style.filter = "blur(" + blur + "px)";
+
+      snowDiv.appendChild(snowFlakes[i]);
+
+      i = (i + 1) % snowFlakes.length;
+    }
+
+    let audio = document.getElementById("audioPlayer");
+    let btn = document.getElementById("audio");
+    let playing = false;
+    let moved = 0;
+    btn.addEventListener("click", function () {
+      if (playing) {
+        btn.innerHTML = "<i class='bi bi-play-fill'></i> Play Audio";
+        audio.pause();
+        playing = false;
+      } else {
+        btn.innerHTML = "<i class='bi bi-pause-fill'></i> Pause Audio";
+        audio.play();
+        audio.loop = true;
+        playing = true;
+      }
+    });
+    
+    // JavaScript
+    // Wrap the native DOM audio element play function and handle any autoplay errors
+    Audio.prototype.play = (function(play) {
+    return function () {
+      var audio = this,
+          args = arguments,
+          promise = play.apply(audio, args);
+      if (promise !== undefined) {
+        promise.catch(_ => {
+          // Autoplay was prevented. This is optional, but add a button to start playing.
+          var el = document.createElement("button");
+          el.innerHTML = "Play";
+          el.addEventListener("click", function(){play.apply(audio, args);});
+          this.parentNode.insertBefore(el, this.nextSibling)
+        });
+      }
+    };
+    })(Audio.prototype.play);
+    
+    // Try automatically playing our audio via script. This would normally trigger and error.
+    btn.click();
+  </script>
+</html>
